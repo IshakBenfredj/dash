@@ -12,6 +12,9 @@
     .flexCenter {
         @apply flex justify-center items-center
     }
+    .flexBetween {
+        @apply flex justify-between items-center
+    }
     .input {
         @apply 
         w-full mb-5 mt-2 px-2 py-1 rounded-md border-transparent border-[3px] focus:border-primary focus:border-[3px] outline-0 
