@@ -1,0 +1,27 @@
+ADMIN DASHBOARD :
+
+- Add skills
+- Add projects ( Portfolio )
+- Add services
+
+
+SKILL :
+
+- Name : String
+- Type ( WEB | Mobile | Desktop ) All : Array
+- Image : String
+
+
+PROJECT :
+
+- Image : String
+- Name : String
+- Type ( WEB | Mobile | Desktop ) : String
+- Link : String
+~ Details : String
+
+SERVICE :
+
+- Name : String
+- Details : String
+- Image : String
