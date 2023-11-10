@@ -8,14 +8,13 @@ module.exports = {
   theme: {
     extend: {
       colors : {
-        'primary' : '#38BDF8'
+        'primary' : '#38BDF8',
+        'secondary' : '#f250a5',
       },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'bg-add': "url('/public/addBg.jpg')",
       },
     },
-  },
+  }, 
   plugins: [],
 }

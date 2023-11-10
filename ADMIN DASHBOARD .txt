@@ -8,7 +8,7 @@ ADMIN DASHBOARD :
 SKILL :
 
 - Name : String
-- Type ( WEB | Mobile | Desktop ) All : Array
+- Type ( WEB | Mobile | Desktop | All ) : Array
 - Image : String
 
 

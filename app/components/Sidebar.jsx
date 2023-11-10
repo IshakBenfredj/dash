@@ -22,7 +22,7 @@ export default function Sidebar() {
 
   return (
     <div
-      className={` fixed md:relative transition-all bg-gray-950 md:w-80 w-3/4 h-screen p-3 ${
+      className={` fixed md:relative transition-all bg-gray-950 md:w-80 w-3/4 h-screen p-3 z-50 ${
         !openSidebar && "-translate-x-full"
       } md:translate-x-0`}
     >
@@ -39,15 +39,16 @@ export default function Sidebar() {
             <li
               key={link.path}
               className={
-                `text-gray-200 text-lg font-medium whitespace-nowrap my-3 p-3 transition-all capitalize rounded-md 
+                `text-gray-200 text-lg font-medium whitespace-nowrap my-3 transition-all capitalize rounded-md 
                 hover:bg-white hover:text-gray-900 ${pathname === `/dashboard${link.path}` && 'bg-white text-gray-900'}`
               }
+              onClick={() => setOpenSidebar(false)}
             >
               <Link
                 href={`/dashboard/${
                   link.path !== "dashboard" ? link.path : ""
                 }`}
-                className="flex items-center gap-3"
+                className="flex items-center gap-3 p-3"
               >
                 {link.icon}
                 {link.link}
