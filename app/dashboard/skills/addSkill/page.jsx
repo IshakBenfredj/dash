@@ -21,7 +21,7 @@ export default function page() {
     }
   }
 
-  const handleAddSkill = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     setLoading(true)
     console.log(name)
@@ -33,8 +33,8 @@ export default function page() {
       <PageHeader title={"add skill"} />
       <div className="md:flexCenter md:px-0 px-4 add-page h-full">
         <form 
-        onSubmit={handleAddSkill}
-        className="md:w-5/12 w-full md:mt-0 mt-20 mx-auto">
+        onSubmit={handleSubmit}
+        className="md:w-8/12 lg:w-5/12 w-full md:mt-0 mt-20 mx-auto">
           <label htmlFor="skillName" className="label">
             Skill Name
           </label>
@@ -58,7 +58,7 @@ export default function page() {
                 />
                 <label
                   htmlFor={type}
-                  className="text-gray-200 capitalize md:text-xl cursor-pointer"
+                  className="text-gray-200 capitalize md:text-xl text-xs cursor-pointer"
                 >
                   {type}
                 </label>

@@ -10,7 +10,9 @@ export default function RootLayout({ children }) {
   return (
     <div className='flex bg-gray-800 w-screen h-screen'>
         <Sidebar />
-        <div className='w-full h-screen'>{children}</div>
+        <div className='w-full h-screen'>
+          {children}
+        </div>
     </div>
   )
 }

@@ -17,7 +17,7 @@
     }
     .label {
         @apply 
-        text-gray-200 md:text-xl mb-2
+        text-gray-200 md:text-xl mb-2 capitalize
     }
     .input {
         @apply 

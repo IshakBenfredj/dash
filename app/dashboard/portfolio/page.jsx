@@ -3,7 +3,7 @@ import PageHeader from "@/app/components/PageHeader";
 export default function page() {
   return (
     <div>
-       <PageHeader title={'my services'} add={'service'} path={'services/addService'} />
+       <PageHeader title={'my portfolio'} add={'project'} path={'portfolio/addProject'} />
     </div>
   )
 }

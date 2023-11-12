@@ -1,11 +1,11 @@
 ADMIN DASHBOARD :
 
-- Add skills
-- Add projects ( Portfolio )
-- Add services
+- Add skills                       Front ✅    Back ...
+- Add projects ( Portfolio )       Front ✅    Back ...
+- Add services                     Front ...   Back ...
 
 
-SKILL :
+SKILL : 
 
 - Name : String
 - Type ( WEB | Mobile | Desktop | All ) : Array

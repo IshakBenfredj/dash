@@ -11,27 +11,27 @@ export const navLinks = [
         icon : <RiDashboardFill />,
     },
     {
-        path : "skills",
+        path : "/skills",
         link : "skills",
         icon : <GiSkills />,
     },
     {
-        path : "portfolio",
+        path : "/portfolio",
         link : "portfolio",
         icon : <AiFillAppstore />,
     },
     {
-        path : "services",
+        path : "/services",
         link : "services",
         icon : <MdWork />,
     },
     {
-        path : "messages",
+        path : "/messages",
         link : "messages",
         icon : <AiFillMessage />,
     },
     {
-        path : "job messages",
+        path : "/job messages",
         link : "job messages",
         icon : <RiMailStarFill />,
     },
