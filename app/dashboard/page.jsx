@@ -2,10 +2,18 @@
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import Loading from '../loading'
+import { getSkills } from '../rtk/slices/skill'
+import { useDispatch } from 'react-redux'
 
 export default function page() {
     const router = useRouter()
     const [loading, setLoading] = useState(true)
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+      dispatch(getSkills());
+    },[]);
+
 
     useEffect(()=>{
         if (localStorage.getItem('admin') !== process.env.ADMIN_PASS) {
@@ -14,7 +22,7 @@ export default function page() {
             }
         }
         setLoading(false)
-    })
+    },[])
 
     if (loading) {
         return (
