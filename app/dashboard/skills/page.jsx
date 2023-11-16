@@ -26,7 +26,7 @@ export default function page() {
   return (
     <div>
       <PageHeader title={"my skills"} add={"skill"} path={"skills/addSkill"} />
-      <div className="md:px-28 px-2 mt-4">
+      <div className="md:px-28 px-2 my-4">
         {skills.map((skill, index) => {
           return (
             <div
@@ -36,8 +36,8 @@ export default function page() {
               }`}
             >
               <div className="flexCenter gap-6">
-                <img src={skill.image} className="md:w-16 w-10" alt="" />
-                <p className="font-bold text-white md:text-3xl">{skill.name}</p>
+                <img src={skill.image} className="md:w-14 w-10" alt="" />
+                <p className="font-bold text-white md:text-2xl capitalize">{skill.name}</p>
               </div>
               <div
                 className="p-2 rounded-lg bg-red-600 hover:bg-red-500 transition-all"

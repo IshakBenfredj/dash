@@ -71,6 +71,7 @@ export default function page() {
                   type="checkbox"
                   id={skillType}
                   className="cursor-pointer"
+                  value={skillType}
                   onChange={handleType}
                 />
                 <label

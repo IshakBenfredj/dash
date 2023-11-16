@@ -1,6 +1,5 @@
 import Axios from "@/app/api";
-
-const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const getSkills = createAsyncThunk('skillsSlice/getSkills', async () => {
     const { data } = await Axios.get('/skills')
