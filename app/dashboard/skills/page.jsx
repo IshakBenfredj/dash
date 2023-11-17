@@ -2,13 +2,18 @@
 import Axios from "@/app/api";
 import PageHeader from "@/app/components/PageHeader";
 import Loading from "@/app/loading";
-import { deleteSkill } from "@/app/rtk/slices/skill";
+import { deleteSkill, getSkills } from "@/app/rtk/slices/skill";
+import { useEffect } from "react";
 import { AiFillDelete } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function page() {
   const skills = useSelector((state) => Object.values(state.skills));
   const dispatch = useDispatch();
+
+    useEffect(() => {
+      dispatch(getSkills());
+    },[]);
 
   const handleDelete = async (id) => {
     try {
