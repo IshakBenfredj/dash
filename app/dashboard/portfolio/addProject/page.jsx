@@ -3,6 +3,9 @@ import { useState } from "react";
 import AddPhoto from "@/app/components/AddPhoto";
 import Button from "@/app/components/Button";
 import PageHeader from "@/app/components/PageHeader";
+import { addProject } from "@/app/rtk/slices/portfolio";
+import { useDispatch } from "react-redux";
+import Axios from "@/app/api";
 
 export default function page() {
   const [loading, setLoading] = useState(false);
@@ -10,16 +13,30 @@ export default function page() {
   const [link, setLink] = useState("");
   const [type, setType] = useState("");
   const [image, setImage] = useState("");
+  const dispatch = useDispatch()
 
   const projectsTypes = ["web", "mobile", "desktop"];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
-    console.log(name);
-    console.log(type);
-    console.log(link);
-  };
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setLoading(true)
+    if (name.length && link.length && type.length && image.length) {
+      try {
+        const { data } = await Axios.post('/portfolio/add',{name,link,type,image})
+        dispatch(addProject(data))
+        alert('Project Adding Successfuly')
+        setName('')
+        setImage('')
+        setLink('')
+        setType('')
+      } catch (error) {
+        alert('Something Worg')
+      }
+    } else {
+      alert('Some Fields Are Empty')
+    }
+    setLoading(false)
+  }
 
   return (
     <div className="h-full flex flex-col">

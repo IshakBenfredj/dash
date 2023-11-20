@@ -8,7 +8,7 @@ import { AiFillDelete } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function page() {
-  const skills = useSelector((state) => Object.values(state.skills));
+  const skills = useSelector((state) =>state.skills);
   const dispatch = useDispatch();
 
     useEffect(() => {
