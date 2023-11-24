@@ -10,10 +10,10 @@ export default function Button({ loading, title }) {
         </>
       ) : (
         <>
-          <div class="loading-bar"></div>
-          <div class="loading-bar"></div>
-          <div class="loading-bar"></div>
-          <div class="loading-bar"></div>
+          <div className="loading-bar"></div>
+          <div className="loading-bar"></div>
+          <div className="loading-bar"></div>
+          <div className="loading-bar"></div>
         </>
       )}
     </button>

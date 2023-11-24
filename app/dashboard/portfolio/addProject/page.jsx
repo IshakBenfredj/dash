@@ -6,6 +6,7 @@ import PageHeader from "@/app/components/PageHeader";
 import { addProject } from "@/app/rtk/slices/portfolio";
 import { useDispatch } from "react-redux";
 import Axios from "@/app/api";
+import axios from "axios";
 
 export default function page() {
   const [loading, setLoading] = useState(false);
@@ -13,30 +14,36 @@ export default function page() {
   const [link, setLink] = useState("");
   const [type, setType] = useState("");
   const [image, setImage] = useState("");
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const projectsTypes = ["web", "mobile", "desktop"];
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setLoading(true)
+    e.preventDefault();
+    setLoading(true);
     if (name.length && link.length && type.length && image.length) {
       try {
-        const { data } = await Axios.post('/portfolio/add',{name,link,type,image})
-        dispatch(addProject(data))
-        alert('Project Adding Successfuly')
-        setName('')
-        setImage('')
-        setLink('')
-        setType('')
+        const { data } = await Axios.post("/portfolio/add", {
+          name,
+          link,
+          type,
+          image,
+        })
+        
+        dispatch(addProject(data));
+        alert("Project Adding Successfuly");
+        setName("");
+        setImage("");
+        setLink("");
+        setType("");
       } catch (error) {
-        alert('Something Worg')
+        alert("Something Worg");
       }
     } else {
-      alert('Some Fields Are Empty')
+      alert("Some Fields Are Empty");
     }
-    setLoading(false)
-  }
+    setLoading(false);
+  };
 
   return (
     <div className="h-full flex flex-col">
@@ -45,6 +52,7 @@ export default function page() {
         <form
           onSubmit={handleSubmit}
           className="md:w-8/12 lg:w-5/12 w-full md:mt-0 mt-20 mx-auto"
+          encType=""
         >
           <label htmlFor="name" className="label">
             Name
@@ -93,3 +101,6 @@ export default function page() {
     </div>
   );
 }
+
+
+

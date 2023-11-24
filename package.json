@@ -15,6 +15,7 @@
     "next": "13.5.5",
     "react": "^18",
     "react-dom": "^18",
+    "react-dropzone": "^14.2.3",
     "react-file-base64": "^1.0.3",
     "react-icons": "^4.11.0",
     "react-redux": "^8.1.3",

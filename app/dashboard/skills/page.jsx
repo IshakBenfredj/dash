@@ -1,19 +1,21 @@
 "use client";
 import Axios from "@/app/api";
 import PageHeader from "@/app/components/PageHeader";
-import Loading from "@/app/loading";
 import { deleteSkill, getSkills } from "@/app/rtk/slices/skill";
 import { useEffect } from "react";
 import { AiFillDelete } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function page() {
-  const skills = useSelector((state) =>state.skills);
+  const skills = useSelector((state) => state.skills);
   const dispatch = useDispatch();
 
-    useEffect(() => {
+  useEffect(() => {
+    dispatch(getSkills());
+    setInterval(() => {
       dispatch(getSkills());
-    },[]);
+    }, 100);
+  }, []);
 
   const handleDelete = async (id) => {
     try {
@@ -42,7 +44,9 @@ export default function page() {
             >
               <div className="flexCenter gap-6">
                 <img src={skill.image} className="md:w-14 w-10" alt="" />
-                <p className="font-bold text-white md:text-2xl capitalize">{skill.name}</p>
+                <p className="font-bold text-white md:text-2xl capitalize">
+                  {skill.name}
+                </p>
               </div>
               <div
                 className="p-2 rounded-lg bg-red-600 hover:bg-red-500 transition-all"
