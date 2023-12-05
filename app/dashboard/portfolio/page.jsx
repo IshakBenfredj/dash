@@ -5,7 +5,7 @@ import { deleteProject, getPortfolio } from "@/app/rtk/slices/portfolio.js";
 import Link from "next/link";
 import { useEffect } from "react";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
-import { FaLink } from "react-icons/fa";
+import { FaExternalLinkAlt } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function page() {
@@ -48,25 +48,42 @@ export default function page() {
               index === 0 && "border-t-[1px]"
             }`}
           >
-            <div className="flexCenter gap-6">
-              <img src={project.image} className="md:w-52 w-20" alt="" />
-              <p className="font-bold text-white md:text-2xl text-xs capitalize">
-                {project.name}
-              </p>
+            <div className="flexCenter md:gap-6 gap-3">
+              <img src={project.image} className="md:w-52 w-20 object-contain" alt="" />
+              <div>
+                <span className="font-bold block text-white md:text-2xl text-xs capitalize mb-5">
+                  {project.title}
+                </span>
+                <span className="block text-gray-300 uppercase font-medium md:text-xl text-[10px]">
+                  {project.type}
+                </span>
+              </div>
             </div>
-            <div className="flexCenter gap-3">
-              <Link href={project.link} target="_blank"
+            <div className="flexCenter md:gap-3 gap-2">
+              <Link
+                href={project.link}
+                target="_blank"
                 className="p-2 rounded-lg bg-blue-600 hover:bg-blue-500 transition-all"
               >
-                <FaLink 
+                <FaExternalLinkAlt
                   size={32}
                   className="text-white cursor-pointer md:block hidden"
                 />
-                <FaLink 
+                <FaExternalLinkAlt
                   size={16}
                   className="text-white cursor-pointer md:hidden block"
                 />
               </Link>
+              <div className="p-2 rounded-lg bg-green-600 hover:bg-green-500 transition-all">
+                <AiFillEdit
+                  size={34}
+                  className="text-white cursor-pointer md:block hidden"
+                />
+                <AiFillEdit
+                  size={16}
+                  className="text-white cursor-pointer md:hidden block"
+                />
+              </div>
               <div
                 className="p-2 rounded-lg bg-red-600 hover:bg-red-500 transition-all"
                 onClick={() => handleDelete(project._id)}
@@ -76,18 +93,6 @@ export default function page() {
                   className="text-white cursor-pointer md:block hidden"
                 />
                 <AiFillDelete
-                  size={16}
-                  className="text-white cursor-pointer md:hidden block"
-                />
-              </div>
-              <div
-                className="p-2 rounded-lg bg-green-600 hover:bg-green-500 transition-all"
-              >
-                <AiFillEdit
-                  size={34}
-                  className="text-white cursor-pointer md:block hidden"
-                />
-                <AiFillEdit
                   size={16}
                   className="text-white cursor-pointer md:hidden block"
                 />

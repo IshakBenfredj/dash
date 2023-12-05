@@ -10,7 +10,7 @@ import axios from "axios";
 
 export default function page() {
   const [loading, setLoading] = useState(false);
-  const [name, setName] = useState("");
+  const [title, setTitle] = useState("");
   const [link, setLink] = useState("");
   const [type, setType] = useState("");
   const [image, setImage] = useState("");
@@ -21,10 +21,10 @@ export default function page() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    if (name.length && link.length && type.length && image.length) {
+    if (title.length && link.length && type.length && image.length) {
       try {
         const { data } = await Axios.post("/portfolio/add", {
-          name,
+          title,
           link,
           type,
           image,
@@ -32,7 +32,7 @@ export default function page() {
         
         dispatch(addProject(data));
         alert("Project Adding Successfuly");
-        setName("");
+        setTitle("");
         setImage("");
         setLink("");
         setType("");
@@ -52,17 +52,16 @@ export default function page() {
         <form
           onSubmit={handleSubmit}
           className="md:w-8/12 lg:w-5/12 w-full md:mt-0 mt-20 mx-auto"
-          encType=""
         >
           <label htmlFor="name" className="label">
-            Name
+            Title
           </label>
           <input
             type="text"
-            id="name"
+            id="title"
             className="input"
-            placeholder="Project Name"
-            onChange={(e) => setName(e.target.value)}
+            placeholder="Project Title"
+            onChange={(e) => setTitle(e.target.value)}
           />
           <label htmlFor="link" className="label">
             Link

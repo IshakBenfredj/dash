@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react'
 import Loading from '../loading'
 import { getSkills } from '../rtk/slices/skill'
 import { useDispatch } from 'react-redux'
+import { getPortfolio } from '../rtk/slices/portfolio'
+import { getServices } from '../rtk/slices/services'
 
 export default function page() {
     const router = useRouter()
@@ -12,6 +14,8 @@ export default function page() {
 
     useEffect(() => {
       dispatch(getSkills());
+      dispatch(getPortfolio());
+      dispatch(getServices());
     },[]);
 
 
