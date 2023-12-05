@@ -55,9 +55,8 @@ export default function page() {
               </p>
             </div>
             <div className="flexCenter gap-3">
-              <Link href={project.link}
+              <Link href={project.link} target="_blank"
                 className="p-2 rounded-lg bg-blue-600 hover:bg-blue-500 transition-all"
-                onClick={() => handleDelete(project._id)}
               >
                 <FaLink 
                   size={32}
@@ -83,7 +82,6 @@ export default function page() {
               </div>
               <div
                 className="p-2 rounded-lg bg-green-600 hover:bg-green-500 transition-all"
-                onClick={() => handleDelete(project._id)}
               >
                 <AiFillEdit
                   size={34}
