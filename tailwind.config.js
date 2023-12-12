@@ -11,9 +11,6 @@ module.exports = {
         'primary' : '#38BDF8',
         'secondary' : '#f250a5',
       },
-      backgroundImage: {
-        'bg-add': "url('/public/addBg.jpg')",
-      },
     },
   }, 
   plugins: [],

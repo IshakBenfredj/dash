@@ -13,6 +13,7 @@ export default function page() {
   const [title, setTitle] = useState("");
   const [link, setLink] = useState("");
   const [type, setType] = useState("");
+  const [details, setDetails] = useState("");
   const [image, setImage] = useState("");
   const dispatch = useDispatch();
 
@@ -21,12 +22,13 @@ export default function page() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    if (title.length && link.length && type.length && image.length) {
+    if (title.length && link.length && type.length && image.length && details.length) {
       try {
         const { data } = await Axios.post("/portfolio/add", {
           title,
           link,
           type,
+          details,
           image,
         })
         
@@ -36,6 +38,7 @@ export default function page() {
         setImage("");
         setLink("");
         setType("");
+        setDetails("");
       } catch (error) {
         alert("Something Worg");
       }
@@ -48,7 +51,7 @@ export default function page() {
   return (
     <div className="h-full flex flex-col">
       <PageHeader title={"add project"} />
-      <div className="md:flexCenter md:px-0 px-4 add-page h-full">
+      <div className="md:flexCenter md:px-0 px-4 add-page h-full py-28">
         <form
           onSubmit={handleSubmit}
           className="md:w-8/12 lg:w-5/12 w-full md:mt-0 mt-20 mx-auto"
@@ -74,6 +77,16 @@ export default function page() {
             onChange={(e) => setLink(e.target.value)}
           />
           <AddPhoto image={image} setImage={setImage} />
+          <label htmlFor="details" className="label">
+            details
+          </label>
+          <textarea
+            rows={5}
+            id="details"
+            className="input"
+            placeholder="Service Details"
+            onChange={(e) => setDetails(e.target.value)}
+          />
           <div className="grid grid-cols-3 gap-3 mb-5">
             {projectsTypes.map((type) => (
               <div className="flex gap-2" key={type}>
