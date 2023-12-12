@@ -84,7 +84,7 @@ export default function page() {
             rows={5}
             id="details"
             className="input"
-            placeholder="Service Details"
+            placeholder="Project Details"
             onChange={(e) => setDetails(e.target.value)}
           />
           <div className="grid grid-cols-3 gap-3 mb-5">
