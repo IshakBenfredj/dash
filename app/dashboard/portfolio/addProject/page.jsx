@@ -62,6 +62,7 @@ export default function page() {
           <input
             type="text"
             id="title"
+            value={title}
             className="input"
             placeholder="Project Title"
             onChange={(e) => setTitle(e.target.value)}
@@ -72,6 +73,7 @@ export default function page() {
           <input
             type="text"
             id="link"
+            value={link}
             className="input"
             placeholder="Project Link"
             onChange={(e) => setLink(e.target.value)}
@@ -84,6 +86,7 @@ export default function page() {
             rows={5}
             id="details"
             className="input"
+            value={details}
             placeholder="Project Details"
             onChange={(e) => setDetails(e.target.value)}
           />
