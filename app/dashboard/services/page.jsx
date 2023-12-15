@@ -48,7 +48,7 @@ export default function page() {
               {service.title}
             </h4>
             <p className="text-center md:text-lg text-gray-300">
-              {service.details}
+              {service.details.slice(0,100)} ...
             </p>
             <div className="flexCenter gap-3 mt-4">
               <div className="p-1 flexCenter w-full rounded-lg border-2 border-green-600 bg-green-600 hover:bg-green-500 transition-all">

@@ -6,6 +6,7 @@ import storage from 'redux-persist/lib/storage';
 import skillsSlice from './slices/skill';
 import portfolioSlice from './slices/portfolio';
 import servicesSlice from './slices/services';
+import testimonialsSlice from './slices/testimonials';
 // import authSlice from './slices/auth';
 
 const persistConfig = {
@@ -17,6 +18,7 @@ const persistedReducer = persistReducer(persistConfig, combineReducers({
   skills : skillsSlice,
   portfolio : portfolioSlice,
   services : servicesSlice,
+  testimonials : testimonialsSlice,
 }));
 
 export const store = configureStore({

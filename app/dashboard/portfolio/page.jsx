@@ -49,7 +49,7 @@ export default function page() {
             }`}
           >
             <div className="flexCenter md:gap-6 gap-3">
-              <img src={project.image} className="md:w-52 w-20 object-contain" alt="" />
+              <img src={project.image} className="md:w-52 w-20 md:h-52 h-20 object-cover" alt="" />
               <div>
                 <span className="font-bold block text-white md:text-2xl text-xs capitalize mb-5">
                   {project.title}

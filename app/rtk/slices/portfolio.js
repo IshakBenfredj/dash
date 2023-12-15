@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const getPortfolio = createAsyncThunk('portfolioSlice/getPortfolio', async () => {
     const { data } = await Axios.get('/portfolio')
-    return data
+    return data.reverse()
 })
 
 const portfolioSlice = createSlice({
