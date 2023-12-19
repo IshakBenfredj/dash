@@ -31,11 +31,6 @@ export const navLinks = [
         icon : <AiFillMessage />,
     },
     {
-        path : "/job messages",
-        link : "job messages",
-        icon : <RiMailStarFill />,
-    },
-    {
         path : "/testimonials",
         link : "testimonials",
         icon : <BsPersonHeart />,
