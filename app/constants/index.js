@@ -1,8 +1,9 @@
-import { RiDashboardFill, RiMailStarFill } from 'react-icons/ri'
+import { RiDashboardFill } from 'react-icons/ri'
 import { GiSkills } from 'react-icons/gi'
 import { AiFillAppstore, AiFillMessage } from 'react-icons/ai'
 import { MdWork } from 'react-icons/md'
 import { BsPersonHeart } from "react-icons/bs";
+import { FaComments } from 'react-icons/fa';
 
 export const navLinks = [
     {
@@ -34,6 +35,11 @@ export const navLinks = [
         path : "/testimonials",
         link : "testimonials",
         icon : <BsPersonHeart />,
+    },
+    {
+        path : "/comments",
+        link : "comments",
+        icon : <FaComments />,
     },
 ]
 
