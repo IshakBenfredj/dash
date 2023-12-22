@@ -65,7 +65,7 @@ export default function page() {
             <dir className="flexCenter my-0 mt-2 md:mt-0">
               <AiFillDelete
                 size={30}
-                className=" text-white p-1 bg-red-700 rounded-lg md:w-fit w-2/3 mx-auto cursor-pointer"
+                className=" text-white p-1 bg-red-700 hover:bg-red-600 transition-all rounded-lg md:w-fit w-2/3 mx-auto cursor-pointer"
                 onClick={() => handleDelete(comment._id)}
               />
             </dir>
