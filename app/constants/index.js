@@ -1,7 +1,7 @@
 import { RiDashboardFill } from 'react-icons/ri'
 import { GiSkills } from 'react-icons/gi'
 import { AiFillAppstore, AiFillMessage } from 'react-icons/ai'
-import { MdWork } from 'react-icons/md'
+import { MdPlayLesson, MdWork } from 'react-icons/md'
 import { BsPersonHeart } from "react-icons/bs";
 import { FaComments } from 'react-icons/fa';
 
@@ -40,6 +40,11 @@ export const navLinks = [
         path : "/comments",
         link : "comments",
         icon : <FaComments />,
+    },
+    {
+        path : "/lessons",
+        link : "lessons",
+        icon : <MdPlayLesson />,
     },
 ]
 

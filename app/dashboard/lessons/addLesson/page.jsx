@@ -3,35 +3,33 @@ import { useState } from "react";
 import AddPhoto from "@/app/components/AddPhoto";
 import Button from "@/app/components/Button";
 import PageHeader from "@/app/components/PageHeader";
-import Axios from "@/app/api";
 import { useDispatch } from "react-redux";
-import { addService } from "@/app/rtk/slices/services";
-import TextArea from "@/app/components/TextArea";
+import Axios from "@/app/api";
+import { addLesson } from "@/app/rtk/slices/lessons";
 
 export default function page() {
   const [loading, setLoading] = useState(false);
   const [title, setTitle] = useState("");
-  const [details, setDetails] = useState("");
+  const [link, setLink] = useState("");
   const [image, setImage] = useState("");
-
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    if (title.length && details.length && image.length) {
+    if (title.length && link.length && image.length) {
       try {
-        const { data } = await Axios.post("/services/add", {
+        const { data } = await Axios.post("/lessons/add", {
           title,
-          details,
+          link,
           image,
         });
 
-        dispatch(addService(data));
-        alert("Service Adding Successfuly");
+        dispatch(addLesson(data));
+        alert("Lesson Adding Successfuly");
         setTitle("");
         setImage("");
-        setDetails("");
+        setLink("");
       } catch (error) {
         alert("Something Worg");
       }
@@ -43,28 +41,36 @@ export default function page() {
 
   return (
     <div className="h-full flex flex-col">
-      <PageHeader title={"add service"} />
-      <div className="md:flexCenter md:px-0 px-4 add-page h-full">
+      <PageHeader title={"add Lesson"} />
+      <div className="md:flexCenter md:px-0 px-4 add-page h-full py-28">
         <form
           onSubmit={handleSubmit}
           className="md:w-8/12 lg:w-5/12 w-full md:mt-0 mt-20 mx-auto"
         >
-          <label htmlFor="title" className="label">
-            title
+          <label htmlFor="name" className="label">
+            Title
           </label>
           <input
             type="text"
             id="title"
+            value={title}
             className="input"
-            placeholder="Service Title"
+            placeholder="Lesson Title"
             onChange={(e) => setTitle(e.target.value)}
           />
-          <AddPhoto image={image} setImage={setImage} />
-          <label htmlFor="details" className="label">
-            details
+          <label htmlFor="link" className="label">
+            Link
           </label>
-          <TextArea details={details} setDetails={setDetails} />
-          <Button loading={loading} title={"add service"} />
+          <input
+            type="text"
+            id="link"
+            value={link}
+            className="input"
+            placeholder="Lesson Link"
+            onChange={(e) => setLink(e.target.value)}
+          />
+          <AddPhoto image={image} setImage={setImage} />
+          <Button loading={loading} title={"add project"} />
         </form>
       </div>
     </div>

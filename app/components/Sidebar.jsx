@@ -22,7 +22,7 @@ export default function Sidebar() {
 
   return (
     <div
-      className={` fixed md:relative transition-all bg-gray-950 md:w-80 w-3/4 h-screen p-3 z-50 ${
+      className={`sidebar fixed md:relative transition-all bg-gray-950 md:w-80 w-3/4 min-h-screen overflow-y-auto p-3 z-50 ${
         !openSidebar && "-translate-x-full"
       } md:translate-x-0`}
     >

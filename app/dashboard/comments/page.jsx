@@ -1,5 +1,6 @@
 "use client";
 import Axios from "@/app/api";
+import PageHeader from "@/app/components/PageHeader";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AiFillDelete } from "react-icons/ai";
@@ -44,7 +45,8 @@ export default function page() {
   };
 
   return (
-    <div className="pt-10 md:p-0">
+    <div>
+      <PageHeader title={"Comments"} />
       {comments.map((comment, index) => (
         <div
           className={`p-3 pb-2 ${index % 2 === 0 && "bg-gray-900"}`}

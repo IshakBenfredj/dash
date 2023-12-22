@@ -7,6 +7,7 @@ import skillsSlice from './slices/skill';
 import portfolioSlice from './slices/portfolio';
 import servicesSlice from './slices/services';
 import testimonialsSlice from './slices/testimonials';
+import lessonsSlice from './slices/lessons';
 // import authSlice from './slices/auth';
 
 const persistConfig = {
@@ -19,6 +20,7 @@ const persistedReducer = persistReducer(persistConfig, combineReducers({
   portfolio : portfolioSlice,
   services : servicesSlice,
   testimonials : testimonialsSlice,
+  lessons : lessonsSlice,
 }));
 
 export const store = configureStore({
