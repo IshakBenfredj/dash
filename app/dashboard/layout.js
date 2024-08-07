@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
     <div className='flex bg-gray-800 w-screen h-screen'>
         <Sidebar />
         <Providers>
-          <div className='w-full h-screen relative overflow-y-auto'>
+          <div className='w-full bg-gray-800 relative overflow-y-auto'>
             {children}
           </div>
         </Providers>

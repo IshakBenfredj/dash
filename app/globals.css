@@ -11,6 +11,10 @@
   display: none;
 }
 
+.l2 {
+  line-height: 2 !important;
+}
+
 @layer components {
   .flexCenter {
     @apply flex justify-center items-center;

@@ -49,7 +49,7 @@ export default function page() {
   };
 
   return (
-    <div className="h-full flex flex-col">
+    <div className="flex flex-col overflow-y-auto">
       <PageHeader title={"add project"} />
       <div className="md:flexCenter md:px-0 px-4 add-page h-full py-28">
         <form

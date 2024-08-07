@@ -42,9 +42,9 @@ export default function page() {
   };
 
   return (
-    <div className="h-full flex flex-col">
+    <div className="flex flex-col">
       <PageHeader title={"add service"} />
-      <div className="md:flexCenter md:px-0 px-4 add-page h-full">
+      <div className="md:flexCenter md:px-0 px-4 bg-gray-800 add-page py-16">
         <form
           onSubmit={handleSubmit}
           className="md:w-8/12 lg:w-5/12 w-full md:mt-0 mt-20 mx-auto"
